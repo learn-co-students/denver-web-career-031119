@@ -117,47 +117,90 @@ def game_hash
   }
 end
 
+def get_teams
+  game_hash.values
+end
 
+def get_players
+  players = []
+
+  get_teams.each do |team|
+    team[:players].each do |player_name, player_data|
+      player_data[:name] = player_name # kind of cheating here; need to keep name with player!
+      players << player_data
+    end
+  end
+
+  players
+end
+
+def get_player(player_name)
+  get_players.find do |player|
+    player[:name] == player_name
+  end
+end
+
+def shoe_size_greater_than(number)
+  get_players.select do |player|
+    player[:shoe] > number
+  end
+end
+
+def player_names
+  get_players.map do |player|
+    player[:name]
+  end
+end
+
+def num_points_scored(dog)
+  # dog is the player_name (the variable name doesn't matter too much!)
+  get_player(dog)[:points]
+end
+
+def shoe_size(player_name)
+  get_player(player_name)[:shoe]
+end
+
+# ORIGINAL SOLUTIONS BELOW:
+#
+# def player_names # sandwich method
+#   players = []
+#
+#   get_players.each do |player|
+#     players << player[:name]
+#   end
+#
+#   players
+# end
+#
+# def shoe_size_greater_than(number) # sandwich method
+#   players = []
+#
+#   get_players.each do |player|
+#     if player[:shoe] > number
+#       players << player
+#     end
+#   end
+#
+#   players
+# end
+#
 # def num_points_scored(player_name)
-#   # get a list of all the players
-#   # find the player whose name matches the argument 'player_name'
-#   # return that player's points
-# end
-
-
-
-
-# # EXERCISE:
-# # Define a method called get_names that takes an array of instructors
-# # and returns just their names.
-# instructors = [
-#   {name: 'Alex', hometown: 'upstate ny', mood: 'excited'},
-#   {name: 'rachel', hometown: 'maine'},
-#   {name: 'maxwell', hometwon: 'brookyln'}
-# ]
-#
-# def get_names(instructors)
-#
-# end
-
-
-
-
-# def get_players
-#
-# end
-
-
-
-# # EXERCISE
-# # What do the following return?
-#
-# arr = (1..100).to_a
-#
-# arr.map do |num|
-#   num.even?
+#   game_hash.each do |location, team|
+#     team.each do |attribute, data|
+#       if data.include?(player_name)
+#         return game_hash[location][attribute][player_name][:shoe]
+#       end
+#     end
+#   end
 # end
 #
-# arr.select do |num|
-#   7
+# def shoe_size(player_name)
+#   game_hash.each do |location, team|
+#     team.each do |attribute, data|
+#       if data.include?(player_name)
+#         return game_hash[location][attribute][player_name][:shoe]
+#       end
+#     end
+#   end
 # end
