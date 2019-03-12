@@ -30,6 +30,8 @@
 
 ### How the internet works
 
+* Tubes, packets, protocols, routers (communication, direction), handshake
+
 * https://www.reddit.com/r/AskProgramming/
 * https://www.reddit.com/r/AskProgramming/.json
 * What is JSON?
@@ -45,7 +47,7 @@
   * Excon
   * Patron
   * EventMachine
-  * HTTPClient
+  * HTTParty
 
 ### Making requests to Google Books API
 
