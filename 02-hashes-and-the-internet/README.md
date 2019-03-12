@@ -1,6 +1,6 @@
 # Hashes and the Internet
 
-## SWBATs
+## Learning goals
 
 * Recognize the parts of the request-response lifecycle
   * Define client and describe setting up the request
