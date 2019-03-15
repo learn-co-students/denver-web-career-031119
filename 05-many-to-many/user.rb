@@ -9,11 +9,11 @@ class User
     @@all << self
   end
 
-  def post_tweet
-    Tweet.new('tweet message', self)
+  def post_tweet(message)
+    Tweet.new(message, self)
   end
 
-  def tweets
+  def tweets # has many relationships
     Tweet.all.select do |tweet|
       tweet.user == self
     end

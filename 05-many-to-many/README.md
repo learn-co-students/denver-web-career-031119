@@ -1,4 +1,4 @@
-# Object Relations - One to Many
+# Object Relations - Many to Many
 
 ## Learning goals
 * Implement both sides of a many to many relationship
@@ -7,11 +7,6 @@
 * Demonstrate single source of truth by not storing one object in multiple collections
 
 ## Outline
-```text
- 5m Review 0bject Orientation
-10m Intro to many to many relationships
-10m Introduce activity
-30m Student exercise
-===
-55m Total
-```
+* Review 0bject Orientation
+* Intro to many to many relationships
+* Introduce activity
