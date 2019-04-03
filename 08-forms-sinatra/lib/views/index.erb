@@ -1,0 +1,8 @@
+<ul>
+  <% @plants.each do |plant| %>
+    <li>
+      <a href="/plants/<%= plant.id %>"><%= plant.species %></a>, size <%= plant.size %> <a href="/plants/<%= plant.id %>/edit">Edit</a>
+    </li>
+  <% end %>
+</ul>
+<a href="/plants/new">Add a plant</a>

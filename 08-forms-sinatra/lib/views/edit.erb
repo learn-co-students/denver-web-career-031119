@@ -1,0 +1,17 @@
+<form method="POST" action="/plants/<%= @plant.id %>">
+  <label for="species">Species</label>
+  <input type="text" id="species" name="species" value="<%= @plant.species %>" />
+
+  <label for="size">Size</label>
+  <input type="number" id="size" name="size" value="<%= @plant.size %>" />
+
+  <input type="submit" value="Add a plant" />
+
+  <input type="hidden" name="_method" value="PUT" />
+</form>
+
+<form method="POST" action="/plants/<%= @plant.id %>">
+  <input type="submit" value="Delete this plant" />
+
+  <input type="hidden" name="_method" value="DELETE" />
+</form>
